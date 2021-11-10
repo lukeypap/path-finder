@@ -9,6 +9,7 @@ import DropDown from "./DropDown";
 const StyledButton = styled(Button)`
   && {
     margin-top: 8px;
+    margin-bottom: 8px;
   }
 `;
 

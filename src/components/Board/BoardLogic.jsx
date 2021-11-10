@@ -158,7 +158,7 @@ const BoardLogic = () => {
         const node = shortestPath[i];
         document.getElementById(
           `node-${node.row}-${node.col}`
-        ).className = `${STARTNODECLASS} node-shortestPath`;
+        ).className = `${EMPTYNODECLASS} node-shortestPath`;
       }, 100 * i);
     }
   };
