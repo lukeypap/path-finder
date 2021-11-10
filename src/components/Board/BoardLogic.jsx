@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Dijkstra, getShortestPath } from "../../pathfindingAlgs/Dijkstra";
 import { randomAlg } from "../../pathfindingAlgs/randomAlg";
+import { RecursiveDivision } from "../../wallAlgs/RecursiveDivision";
 
 const STARTNODECLASS = "sc-dkPtRN chrObk";
 const ENDNODECLASS = "sc-hKwDye eKwWfH";
@@ -138,6 +139,21 @@ const BoardLogic = () => {
     animateAlgorithm(visitedNodes, shortestPath);
   };
 
+  const startRecurseWalls = () => {
+    const wallsInOrder = RecursiveDivision(board, row, col);
+    console.log(wallsInOrder);
+    animateWallsInOrder(wallsInOrder);
+  };
+
+  const animateWallsInOrder = (wallsInOrder) => {
+    for (let i = 0; i < wallsInOrder.length; i++) {
+      setTimeout(() => {
+        const node = wallsInOrder[i];
+        document.getElementById(`node-${node.row}-${node.col}`).className = WALLCLASS;
+      }, 10 * i);
+    }
+  };
+
   const animateAlgorithm = (visitedNodes, shortestPath) => {
     for (let i = 0; i < visitedNodes.length; i++) {
       setTimeout(() => {
@@ -217,6 +233,7 @@ const BoardLogic = () => {
     handleMouseLeave,
     startAlgorithm,
     startDijkstra,
+    startRecurseWalls,
     resetBoard,
     handleSliderChangeCol,
     handleSliderChangeRow,

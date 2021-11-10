@@ -1,8 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import TopBar from "./components/Topbar";
 import Board from "./components/Board/Board";
-import { AppBar, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import InfoPanel from "./components/InfoPanel";
 import BoardLogic from "./components/Board/BoardLogic";
 
@@ -14,6 +12,7 @@ const PathFinder = () => {
     handleMouseLeave,
     startAlgorithm,
     startDijkstra,
+    startRecurseWalls,
     resetBoard,
     handleSliderChangeCol,
     handleSliderChangeRow,
@@ -28,6 +27,7 @@ const PathFinder = () => {
         resetBoard={resetBoard}
         handleSliderChangeCol={handleSliderChangeCol}
         handleSliderChangeRow={handleSliderChangeRow}
+        startRecurseWalls={startRecurseWalls}
       />
       <Board
         handleMouseDown={handleMouseDown}

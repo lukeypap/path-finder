@@ -16,6 +16,7 @@ const StyledButton = styled(Button)`
 const InfoPanel = ({
   startAlgorithm,
   startDijkstra,
+  startRecurseWalls,
   resetBoard,
   handleSliderChangeCol,
   handleSliderChangeRow,
@@ -103,6 +104,16 @@ const InfoPanel = ({
               style={{ marginTop: "15px" }}
             >
               Reset
+            </StyledButton>
+            <StyledButton
+              size="small"
+              onClick={startRecurseWalls}
+              variant="contained"
+              startIcon={<Delete />}
+              color="secondary"
+              style={{ marginTop: "15px" }}
+            >
+              Generate Walls
             </StyledButton>
           </Grid>
         </Grid>
