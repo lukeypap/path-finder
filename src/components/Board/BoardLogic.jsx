@@ -3,10 +3,10 @@ import { Dijkstra, getShortestPath } from "../../pathfindingAlgs/Dijkstra";
 import { randomAlg } from "../../pathfindingAlgs/randomAlg";
 import { RecursiveDivision } from "../../wallAlgs/RecursiveDivision";
 
-const STARTNODECLASS = "sc-dkPtRN chrObk";
-const ENDNODECLASS = "sc-hKwDye eKwWfH";
-const WALLCLASS = "sc-gsDKAQ fmnchj";
-const EMPTYNODECLASS = "sc-bdvvtL geuBXe";
+const STARTNODECLASS = "startNode";
+const ENDNODECLASS = "finishNode";
+const WALLCLASS = "wallNode";
+const EMPTYNODECLASS = "emptyNode";
 
 const BoardLogic = () => {
   const STARTNODE = {

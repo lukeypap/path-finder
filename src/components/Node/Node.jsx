@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components/macro";
 import "./Node.css";
 
 const grow = keyframes`
@@ -21,6 +21,7 @@ const grow = keyframes`
 `;
 
 const Box = styled.span`
+  ${console.log};
   width: 28px;
   height: 28px;
   border: 0.5px solid #cacaca;
@@ -65,6 +66,7 @@ const Node = ({
       return (
         <StartNode
           id={`node-${row}-${col}`}
+          className="STARTNODE"
           onMouseDown={() => onMouseDown(row, col)}
           onMouseEnter={() => onMouseEnter(row, col)}
           onMouseUp={() => onMouseUp(row, col)}
@@ -75,6 +77,7 @@ const Node = ({
       return (
         <FinishNode
           id={`node-${row}-${col}`}
+          className="FINISHNODE"
           onMouseDown={() => onMouseDown(row, col)}
           onMouseEnter={() => onMouseEnter(row, col)}
           onMouseUp={() => onMouseUp()}
@@ -85,6 +88,7 @@ const Node = ({
       return (
         <Wall
           id={`node-${row}-${col}`}
+          className="WALLNODE"
           onMouseDown={() => onMouseDown(row, col)}
           onMouseEnter={() => onMouseEnter(row, col)}
           onMouseUp={() => onMouseUp()}
@@ -94,6 +98,7 @@ const Node = ({
       return (
         <Box
           id={`node-${row}-${col}`}
+          className="EMPTYNODE"
           onMouseDown={() => onMouseDown(row, col)}
           onMouseEnter={() => onMouseEnter(row, col)}
           onMouseUp={() => onMouseUp()}
