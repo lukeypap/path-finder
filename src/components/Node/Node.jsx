@@ -21,7 +21,6 @@ const grow = keyframes`
 `;
 
 const Box = styled.span`
-  ${console.log};
   width: 28px;
   height: 28px;
   border: 0.5px solid #cacaca;
@@ -49,18 +48,7 @@ const FinishNode = styled.span`
   box-shadow: 0px 0px 7px 0px #d17070;
 `;
 
-const Node = ({
-  startNode,
-  finishNode,
-  row,
-  col,
-  hasBeenVisited,
-  wall,
-  onMouseDown,
-  onMouseEnter,
-  onMouseUp,
-  onMouseLeave,
-}) => {
+const Node = ({ startNode, finishNode, row, col, hasBeenVisited, wall, onMouseDown, onMouseEnter, onMouseUp, onMouseLeave }) => {
   const chooseNode = () => {
     if (startNode) {
       return (

@@ -44,7 +44,7 @@ const BoardLogic = () => {
   };
 
   const [row, setRow] = useState(20);
-  const [col, setCol] = useState(46);
+  const [col, setCol] = useState(47);
   const [board, setBoard] = useState(createBoard(row, col));
   const [mousePressed, setMousePressed] = useState(false);
   const previousStartNode = useRef(STARTNODE);
@@ -75,16 +75,12 @@ const BoardLogic = () => {
       newBoard[previousStartNode.current.row][previousStartNode.current.col].startNode = false;
       newBoard[previousStartNode.current.row][previousStartNode.current.col].distance = Infinity;
       document.getElementById(`node-${node.row}-${node.col}`).className = STARTNODECLASS;
-      document.getElementById(
-        `node-${previousStartNode.current.row}-${previousStartNode.current.col}`
-      ).className = EMPTYNODECLASS;
+      document.getElementById(`node-${previousStartNode.current.row}-${previousStartNode.current.col}`).className = EMPTYNODECLASS;
       previousStartNode.current = { row: row, col: col };
     } else if (startOrEnd === "end") {
       node.finishNode = true;
       newBoard[previousEndNode.current.row][previousEndNode.current.col].finishNode = false;
-      document.getElementById(
-        `node-${previousEndNode.current.row}-${previousEndNode.current.col}`
-      ).className = EMPTYNODECLASS;
+      document.getElementById(`node-${previousEndNode.current.row}-${previousEndNode.current.col}`).className = EMPTYNODECLASS;
       document.getElementById(`node-${node.row}-${node.col}`).className = ENDNODECLASS;
       previousEndNode.current = { row: row, col: col };
     }
@@ -133,9 +129,7 @@ const BoardLogic = () => {
   const startDijkstra = () => {
     clearBoard();
     const visitedNodes = Dijkstra(board);
-    const shortestPath = getShortestPath(
-      board[previousEndNode.current.row][previousEndNode.current.col]
-    );
+    const shortestPath = getShortestPath(board[previousEndNode.current.row][previousEndNode.current.col]);
     animateAlgorithm(visitedNodes, shortestPath);
   };
 
@@ -150,7 +144,7 @@ const BoardLogic = () => {
       setTimeout(() => {
         const node = wallsInOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className = WALLCLASS;
-      }, 10 * i);
+      }, 2 * i);
     }
   };
 
@@ -158,9 +152,7 @@ const BoardLogic = () => {
     for (let i = 0; i < visitedNodes.length; i++) {
       setTimeout(() => {
         const node = visitedNodes[i];
-        document.getElementById(
-          `node-${node.row}-${node.col}`
-        ).className = `${EMPTYNODECLASS} node-visited`;
+        document.getElementById(`node-${node.row}-${node.col}`).className = `${EMPTYNODECLASS} node-visited`;
         if (i === visitedNodes.length - 1) {
           animateShortestPath(shortestPath);
         }
@@ -172,10 +164,8 @@ const BoardLogic = () => {
     for (let i = 0; i < shortestPath.length; i++) {
       setTimeout(() => {
         const node = shortestPath[i];
-        document.getElementById(
-          `node-${node.row}-${node.col}`
-        ).className = `${EMPTYNODECLASS} node-shortestPath`;
-      }, 100 * i);
+        document.getElementById(`node-${node.row}-${node.col}`).className = `${EMPTYNODECLASS} node-shortestPath`;
+      }, 50 * i);
     }
   };
 
