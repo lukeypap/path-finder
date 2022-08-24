@@ -21,29 +21,29 @@ const grow = keyframes`
 `;
 
 const Box = styled.span`
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border: 0.5px solid #cacaca;
 `;
 
 const Wall = styled.span`
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #646464;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
   animation: ${grow} 0.1s linear;
 `;
 
 const StartNode = styled.span`
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #58b358;
   box-shadow: 0px 0px 7px 0px #58b358;
 `;
 
 const FinishNode = styled.span`
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #d17070;
   box-shadow: 0px 0px 7px 0px #d17070;
 `;

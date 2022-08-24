@@ -90,29 +90,29 @@
 }
 
 .emptyNode {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border: 0.5px solid #cacaca;
 }
 
 .wallNode {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #646464;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
   animation: grow 0.1s linear;
 }
 
 .startNode {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #58b358;
   box-shadow: 0px 0px 7px 0px #58b358;
 }
 
 .finishNode {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: #d17070;
   box-shadow: 0px 0px 7px 0px #d17070;
 }

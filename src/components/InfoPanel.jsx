@@ -13,14 +13,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const InfoPanel = ({
-  startAlgorithm,
-  startDijkstra,
-  startRecurseWalls,
-  resetBoard,
-  handleSliderChangeCol,
-  handleSliderChangeRow,
-}) => {
+const InfoPanel = ({ startAlgorithm, startDijkstra, startRecurseWalls, resetBoard, handleSliderChangeCol, handleSliderChangeRow }) => {
   const [selectedAlgorithm, setSelectedAlgorithm] = useState();
   const options = [
     {
@@ -45,11 +38,11 @@ const InfoPanel = ({
   };
 
   return (
-    <div style={{ backgroundColor: "#3a3a3a", marginTop: "0px", borderRadius: "0px" }}>
+    <div style={{ backgroundColor: "#3a3a3a", marginTop: "0px", borderRadius: "0px", paddingBottom: "10px", marginBottom: "20px" }}>
       <Container>
         <Grid container spacing={2} columns={16}>
           <Grid item xs={4}>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Typography gutterBottom color="white">
                 Row
               </Typography>
@@ -73,28 +66,21 @@ const InfoPanel = ({
                 aria-label="Default"
                 valueLabelDisplay="auto"
                 min={5}
-                max={50}
+                max={80}
                 onChange={handleSliderChangeCol}
                 style={{ marginLeft: "20px" }}
               />
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={4}>
             <StyledButton onClick={handleVisualizeOptions} size="large" variant="contained">
               Visualize
             </StyledButton>
           </Grid>
           <Grid item xs={2}>
-            <DropDown
-              name="Algorithm"
-              label="Algorithm"
-              onChange={handleInput}
-              options={options}
-              value={options.id}
-              color="white"
-            />
+            <DropDown name="Algorithm" label="Algorithm" onChange={handleInput} options={options} value={options.id} color="white" />
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={6}>
             <StyledButton
               size="small"
               onClick={() => resetBoard()}
@@ -109,9 +95,8 @@ const InfoPanel = ({
               size="small"
               onClick={startRecurseWalls}
               variant="contained"
-              startIcon={<Delete />}
               color="secondary"
-              style={{ marginTop: "15px" }}
+              style={{ marginTop: "15px", marginLeft: "10px" }}
             >
               Generate Walls
             </StyledButton>
